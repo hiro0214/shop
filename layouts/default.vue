@@ -85,7 +85,6 @@ body {
   color:#fff;
   font-size:28px;
   font-weight:600;
-  // font-size:2em;
 }
 
 .spacer {
@@ -139,12 +138,17 @@ section {
 </style>
 
 <script>
+import firebase from '~/plugins/firebase'
 import sideBar from '~/components/sideBar.vue'
 
 export default {
-  // created () {
-  //   this.$store.dispatch('other/load')
-  // },
+  created () {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.$store.dispatch('other/init')
+      }
+    })
+  },
   components: {
     sideBar
   },
@@ -154,4 +158,5 @@ export default {
     }
   }
 }
+
 </script>

@@ -1,19 +1,19 @@
 <template>
   <v-app>
-    <h1 v-if="error.statusCode === 404">
-      <div class="error-info">
-        <v-icon>error</v-icon>
-        <h2>Page Not Found!</h2>
-        <h3>お探しのページは見つかりませんでした</h3>
-        <h4>URLに間違いがないか確認をしてください</h4>
-      </div>
-    </h1>
-    <h1 v-else>
+    <div v-if="error.statusCode === 404" class="error-info">
+      <v-icon>error</v-icon>
+      <h2>Page Not Found!</h2>
+      <h3>お探しのページは見つかりませんでした</h3>
+      <h4>URLに間違いがないか確認をしてください</h4>
+      <NuxtLink to="/">
+        Home page
+      </NuxtLink>
+    </div>
+
+    <div v-else>
       {{ otherError }}
-    </h1>
-    <NuxtLink to="/">
-      Home page
-    </NuxtLink>
+    </div>
+
   </v-app>
 </template>
 
@@ -35,7 +35,7 @@ export default {
   },
   data () {
     return {
-      otherError: 'An error occurred'
+      otherError: ''
     }
   }
 }

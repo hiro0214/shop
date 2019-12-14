@@ -1,7 +1,6 @@
 import firebase from '~/plugins/firebase'
 
 export const state = {
-  userName: '',
   errorMessage: '',
   isLogin: false,
   drawer: false
@@ -13,9 +12,6 @@ export const mutations = {
   },
   setLogin (state, payload) {
     state.isLogin = payload
-  },
-  setName (state, payload) {
-    state.userName = payload
   },
   init (state) {
     state.errorMessage = ''
@@ -29,7 +25,7 @@ export const actions = {
   toggleSide ({ commit }) {
     commit('toggleSide')
   },
-  signUp ({ commit, dispatch }, payload) {
+  signUp ({ dispatch }, payload) {
     firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
       .then(() => {
         const user = firebase.auth().currentUser
@@ -37,19 +33,17 @@ export const actions = {
           displayName: payload.nickname
         })
         alert('登録が完了しました。')
-        commit('setName', payload.nickname)
-        dispatch('init')
+        dispatch('signOut')
+        dispatch('signIn', payload)
       })
       .catch((error) => {
         dispatch('missAlert', error.message)
       })
   },
-  signIn ({ commit, dispatch }, payload) {
+  signIn ({ dispatch }, payload) {
     firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
       .then(() => {
-        const user = firebase.auth().currentUser
-        commit('setName', user.displayName)
-        dispatch('init')
+        this.$router.push({ name: 'index' })
       })
       .catch((error) => {
         dispatch('missAlert', error.message)
@@ -64,7 +58,6 @@ export const actions = {
   init ({ commit }) {
     commit('setLogin', true)
     commit('init')
-    this.$router.push({ name: 'index' })
   },
   missAlert ({ commit }, payload) {
     commit('setLogin', false)
@@ -76,5 +69,9 @@ export const getters = {
   userId () {
     const user = firebase.auth().currentUser
     return user.uid
+  },
+  userName () {
+    const user = firebase.auth().currentUser
+    return user.displayName
   }
 }
