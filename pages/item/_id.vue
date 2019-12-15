@@ -3,8 +3,15 @@
     <img :src="showItem.url">
     <div class="show-info">
       <h3>{{ showItem.title }}</h3>
-      <hr>
       <div>
+        <span>{{ showItem.page }}ページ</span>
+        <span>著者 :</span>
+        <span>{{ showItem.author }}</span>
+      </div>
+      <hr>
+      <h4>商品説明</h4>
+      <p>{{ showItem.description }}</p>
+      <div class="show-info__bottom">
         <p>¥{{ showItem.price }}</p>
         <v-btn v-if="$store.state.other.isLogin === true" @click="$store.dispatch('cart/addCart', showItem)">
           カートに追加する
@@ -21,28 +28,46 @@
 
 .show {
   display:flex;
-  height:600px;
+  min-height:600px;
   padding-top:40px;
   img {
-    width:300px;
-    height:350px;
+    width:250px;
+    height:330px;
   }
   &-info {
     width:55%;
-    height:400px;
+    min-height:400px;
     margin-left:40px;
-    position:relative;
-    h3 {
-      padding-bottom:10px;
+    h3 + div {
+      text-align:right;
+      > span {
+        font-size:14px;
+        +span + span {
+          font-size:16px;
+          font-weight:600;
+        }
+      }
     }
-    > div {
-      position: absolute;
-      right:0;
-      bottom:0;
+    h4 {
+      margin:10px 0;
+      color:rgb(30, 30, 30);
+    + p {
+      color:rgb(40, 40, 40);
+      font-size:15px;
+    }
+    }
+    &__bottom {
+      width:250px;
+      float:right;
+      margin-top:20px;
+      border:solid 3px rgb(202, 202, 202);
+      border-radius:5px;
+      padding:10px 20px;
       p {
+        color:rgb(177, 39, 4);
         font-size:24px;
         font-weight:600;
-        margin-bottom:20px;
+        margin-bottom:10px;
       }
     }
   }

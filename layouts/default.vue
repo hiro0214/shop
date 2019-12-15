@@ -42,10 +42,6 @@
           </v-btn>
         </router-link>
       </div>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
     </v-app-bar>
 
     <sideBar />
@@ -101,6 +97,10 @@ body {
   button {
     position:absolute;
   }
+  + div {
+    width:250px;
+    margin-right:30px;
+  }
 }
 
 .cart-btn{
@@ -126,7 +126,7 @@ body {
 }
 
 section {
-  width:70vw;
+  width:60vw;
   padding-top:40px;
   margin:0 auto 60px;
   > div {

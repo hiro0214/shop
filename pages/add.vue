@@ -7,6 +7,9 @@
           <v-form>
             <v-text-field v-model="item.title" label="商品名" />
             <v-text-field v-model="item.price" label="金額" />
+            <v-text-field v-model="item.description" label="説明文" />
+            <v-text-field v-model="item.author" label="著者" />
+            <v-text-field v-model="item.page" label="ページ数" />
             <v-file-input v-model="item.img" @change="upImage" label="画像ファイル" />
             <v-btn :color="this.$vuetify.theme.themes.dark.info" @click="submit">
               保存

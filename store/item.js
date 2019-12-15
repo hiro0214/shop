@@ -27,6 +27,9 @@ export const actions = {
       const item = {
         title: doc.data().title,
         price: doc.data().price,
+        description: doc.data().description,
+        author: doc.data().author,
+        page: doc.data().page,
         url: doc.data().url
       }
       commit('showInit', item)
@@ -36,6 +39,9 @@ export const actions = {
     db.add({
       title: payload.title,
       price: payload.price,
+      description: payload.description,
+      author: payload.author,
+      page: payload.page,
       url: payload.url
     })
   }),

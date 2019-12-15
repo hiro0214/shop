@@ -55,11 +55,12 @@ h1 {
     height:auto;
   }
   &-info {
-    width:70%;
+    width:60%;
     margin-left:40px;
     position:relative;
     > p {
       width:85%;
+      font-weight:600;
       word-wrap: break-word;
     }
     > span {
