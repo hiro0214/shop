@@ -12,8 +12,8 @@
       <h4>商品説明</h4>
       <p>{{ showItem.description }}</p>
       <div class="show-info__bottom">
-        <p>¥{{ showItem.price }}</p>
-        <v-btn v-if="$store.state.other.isLogin === true" @click="$store.dispatch('cart/addCart', showItem)">
+        <p>¥{{ showItem.price | format-price }}</p>
+        <v-btn v-if="$store.state.other.isLogin === true" @click="addCart">
           カートに追加する
         </v-btn>
         <v-btn v-else disabled>
@@ -31,6 +31,7 @@
   min-height:600px;
   padding-top:40px;
   img {
+    border:solid 1px rgb(238, 238, 238);
     width:250px;
     height:330px;
   }
@@ -87,6 +88,15 @@ export default {
     this.$store.dispatch('item/show', itemId)
   },
   methods: {
+    addCart () {
+      const item = {
+        id: this.$route.params.id,
+        title: this.$store.state.item.item.title,
+        price: this.$store.state.item.item.price,
+        url: this.$store.state.item.item.url
+      }
+      this.$store.dispatch('cart/addCart', item)
+    }
   }
 }
 </script>

@@ -6,7 +6,7 @@
         <v-card-text>
           <v-form>
             <v-text-field v-model="email" label="メールアドレス" />
-            <v-text-field v-model="password" label="パスワード" />
+            <v-text-field :type="show2 ? 'text' : 'password'" v-model="password" label="パスワード" />
             <v-btn @click="signIn">
               ログイン
             </v-btn>

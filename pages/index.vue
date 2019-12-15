@@ -8,8 +8,7 @@
             <img :src="item.url">
             <div class="item-info">
               <p>{{ item.title }}</p>
-              <span>¥{{ item.price }}</span>
-              <!-- フィルターでカンマをいれる -->
+              <span>¥{{ item.price | format-price }}</span>
             </div>
           </div>
         </router-link>
@@ -51,6 +50,7 @@ h1 {
   border-bottom:solid 2px rgb(216, 216, 216);
   display:flex;
   > img {
+    border:solid 1px rgb(238, 238, 238);
     width:200px;
     height:auto;
   }
