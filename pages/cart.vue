@@ -9,7 +9,7 @@
             <p>{{ item.title }}</p>
             <span>¥{{ item.price | format-price }}</span>
           </div>
-          <v-btn :color="$vuetify.theme.themes.dark.accent" @click="removeItem(index)">
+          <v-btn :color="$vuetify.theme.themes.dark.accent" @click="removeCart(index)">
             削除する
           </v-btn>
         </div>
@@ -66,15 +66,20 @@ export default {
     }
   },
   methods: {
-    removeItem (index) {
+    removeCart (index) {
       this.$store.dispatch('cart/removeCart', index)
     },
     buyItem () {
       if (confirm('購入してもよろしいですか？')) {
-        // 購入処理
-        alert('購入が終了しました')
-        this.$store.dispatch('cart/buyAfter')
-        this.$router.push({ name: 'index' })
+        const data = this.$store.state.cart.cart.map((ele) => { return ele.id })
+        this.$store.dispatch('cart/buy', data)
+          .then(() => {
+            alert('購入が終了しました')
+            this.$router.push({ name: 'index' })
+          })
+          .catch((error) => {
+            console.log(error)
+          })
       }
     }
   }

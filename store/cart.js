@@ -34,8 +34,15 @@ export const actions = {
   removeCart ({ commit }, payload) {
     commit('removeCart', payload)
   },
-  buyAfter ({ commit }) {
-    commit('buyAfter')
+  buy ({ commit }, payload) {
+    const db = firebase.firestore().collection(`cart/${getters.uid}/data`)
+    db.add({ id: payload })
+      .then(() => {
+        commit('buyAfter')
+      })
+      .catch((error) => {
+        console.log(error)
+      })
   }
 }
 
