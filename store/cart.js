@@ -36,10 +36,16 @@ export const actions = {
   },
   buy ({ commit, getters }, payload) {
     const db = firebase.firestore().collection(`cart/${getters.uid}/data`)
-    const data = {
-      id: payload
+    let total = 0
+    payload.forEach((num) => {
+      total += Number(num.price)
+    })
+    const buyData = {
+      date: new Date(),
+      total: String(total),
+      data: payload
     }
-    db.add({ id: data })
+    db.add({ buyData })
       .then(() => {
         commit('buyAfter')
       })

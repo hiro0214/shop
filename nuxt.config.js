@@ -46,6 +46,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    ['@nuxtjs/moment', ['ja']],
     '@nuxtjs/dotenv'
   ],
   /*
@@ -63,7 +64,7 @@ export default {
           secondary: colors.amber.lighten2,
           info: colors.blue.lighten1,
           warning: colors.amber.accent2,
-          error: colors.deepOrange.accent4,
+          error: colors.indigo.darken1,
           success: colors.green.accent3
         }
       }

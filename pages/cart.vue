@@ -72,7 +72,11 @@ export default {
     buyItem () {
       if (confirm('購入してもよろしいですか？')) {
         const data = this.$store.state.cart.cart.map((ele) => {
-          return ele.id
+          return {
+            title: ele.title,
+            price: ele.price,
+            url: ele.url
+          }
         })
         this.$store.dispatch('cart/buy', data)
           .then(() => {

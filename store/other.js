@@ -1,6 +1,7 @@
 import firebase from '~/plugins/firebase'
 
 export const state = {
+  datas: [],
   errorMessage: '',
   isLogin: false,
   drawer: false
@@ -18,6 +19,12 @@ export const mutations = {
   },
   errorMessage (state, payload) {
     state.errorMessage = payload
+  },
+  dataInit (state) {
+    state.datas = []
+  },
+  dataShowInit (state, payload) {
+    state.datas.push(payload)
   }
 }
 
@@ -62,6 +69,17 @@ export const actions = {
   missAlert ({ commit }, payload) {
     commit('setLogin', false)
     commit('errorMessage', payload)
+  },
+  dataInit ({ commit }) {
+    commit('dataInit')
+  },
+  dataShowInit ({ commit, getters }) {
+    firebase.firestore().collection(`cart/${getters.userId}/data`).get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        const cartData = doc.data().buyData
+        commit('dataShowInit', cartData)
+      })
+    })
   }
 }
 
@@ -73,5 +91,13 @@ export const getters = {
   userName () {
     const user = firebase.auth().currentUser
     return user.displayName
+  },
+  userEmail () {
+    const user = firebase.auth().currentUser
+    return user.email
+  },
+  userDate () {
+    const user = firebase.auth().currentUser
+    return user.metadata.creationTime
   }
 }
