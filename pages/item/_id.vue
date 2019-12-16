@@ -12,7 +12,7 @@
       <h4>商品説明</h4>
       <p>{{ showItem.description }}</p>
       <div class="show-info__bottom">
-        <p>¥{{ showItem.price | format-price }}</p>
+        <p>¥{{ Number(showItem.price) | format-price }}</p>
         <v-btn v-if="$store.state.other.isLogin === true" @click="addCart">
           カートに追加する
         </v-btn>
