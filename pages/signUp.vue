@@ -7,7 +7,7 @@
           <v-form>
             <v-text-field v-model="nickname" label="ニックネーム" />
             <v-text-field v-model="email" label="メールアドレス" />
-            <v-text-field v-model="password" label="パスワード" />
+            <v-text-field :type="show2 ? 'text' : 'password'" v-model="password" label="パスワード" />
             <v-btn @click="signUp">
               登録
             </v-btn>

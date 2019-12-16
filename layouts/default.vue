@@ -32,9 +32,11 @@
       </div>
 
       <div v-else>
-        <v-btn>
-          <p>マイページ</p>
-        </v-btn>
+        <router-link to="/user">
+          <v-btn>
+            <p>マイページ</p>
+          </v-btn>
+        </router-link>
         <router-link to="/cart">
           <v-btn class="cart-btn">
             <v-icon>shopping_cart</v-icon>
