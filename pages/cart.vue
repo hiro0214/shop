@@ -71,7 +71,9 @@ export default {
     },
     buyItem () {
       if (confirm('購入してもよろしいですか？')) {
-        const data = this.$store.state.cart.cart.map((ele) => { return ele.id })
+        const data = this.$store.state.cart.cart.map((ele) => {
+          return ele.id
+        })
         this.$store.dispatch('cart/buy', data)
           .then(() => {
             alert('購入が終了しました')

@@ -3,7 +3,6 @@
     <ul>
       <li v-for="item in $store.state.item.items" :key="item.id">
         <div class="item">
-          <!-- <img :src="img_src"> -->
           <div class="item-info">
             <p>{{ item.title }}</p>
             <span>¥{{ item.price }}</span>
