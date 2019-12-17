@@ -2,7 +2,6 @@
   <div class="user-data">
     <h3>購入履歴</h3>
     <hr>
-
     <div>
       <ul v-if="$store.state.other.datas.length > 0" class="data-history">
         <li v-for="data in $store.state.other.datas" :key="data.title">
