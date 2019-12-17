@@ -6,7 +6,12 @@
         <v-list-item-group v-model="menu">
           <v-list-item v-for="menu in loginMenus" :key="menu.title" :to="menu.link">
             <v-list-item-content>
-              <v-list-item-title>{{ menu.title }}</v-list-item-title>
+              <v-list-item-title>
+                <v-icon>
+                  {{ menu.icon }}
+                </v-icon>
+                {{ menu.title }}
+              </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
@@ -17,7 +22,12 @@
         <v-list-item-group v-model="menu">
           <v-list-item v-for="menu in logoutMenus" :key="menu.title" :to="menu.link">
             <v-list-item-content>
-              <v-list-item-title>{{ menu.title }}</v-list-item-title>
+              <v-list-item-title>
+                <v-icon>
+                  {{ menu.icon }}
+                </v-icon>
+                {{ menu.title }}
+              </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
@@ -32,12 +42,12 @@ export default {
   data () {
     return {
       loginMenus: [
-        { title: 'マイページ', link: { name: 'user' } },
-        { title: 'カート', link: { name: 'cart' } }
+        { title: 'マイページ', icon: 'person', link: { name: 'user' } },
+        { title: 'カート', icon: 'shopping_cart', link: { name: 'cart' } }
       ],
       logoutMenus: [
-        { title: '新規登録', link: { name: 'signUp' } },
-        { title: 'ログイン', link: { name: 'signIn' } }
+        { title: '新規登録', icon: 'supervisor_account', link: { name: 'signUp' } },
+        { title: 'ログイン', icon: 'how_to_reg', link: { name: 'signIn' } }
       ]
     }
   }

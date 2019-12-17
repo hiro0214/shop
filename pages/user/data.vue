@@ -4,7 +4,7 @@
     <hr>
 
     <div>
-      <ul class="data-history">
+      <ul v-if="$store.state.other.datas.length > 0" class="data-history">
         <li v-for="data in $store.state.other.datas" :key="data.title">
           <p>{{ data.date.toDate() | format-date }}の注文</p>
 
@@ -22,6 +22,10 @@
           </ul>
 
         </li>
+      </ul>
+
+      <ul v-else>
+        <li class="notBuy">購入履歴がまだありません。</li>
       </ul>
     </div>
   </div>
@@ -75,6 +79,10 @@ padding-bottom:5px;
       bottom:0;
     }
   }
+}
+
+.notBuy {
+  margin-top:20px;
 }
 
 </style>

@@ -16,10 +16,27 @@
       </li>
       <div class="buy-info">
         <span>小計({{ $store.state.cart.cart.length }}点): <span class="total">¥{{ totalPrice | format-price }}</span></span>
-        <v-btn :color="$vuetify.theme.themes.dark.secondary" @click="buyItem">
+        <v-btn :color="$vuetify.theme.themes.dark.secondary" @click.stop="dialog = true">
           購入する
         </v-btn>
       </div>
+
+      <v-app class="dialog">
+        <v-dialog v-model="dialog" max-width="350">
+          <v-card>
+            <v-card-title class="headline">カートの商品を購入しても<br>よろしいですか？</v-card-title>
+            <v-card-actions>
+              <v-btn @click="dialog = false">
+                キャンセル
+              </v-btn>
+              <v-btn @click="buyItem">
+                購入する
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+      </v-app>
+
     </ul>
     <p v-else>
       お客様のカートに商品がありません。<br>商品ページからカートに追加してください。
@@ -52,10 +69,31 @@
   }
 }
 
+.dialog {
+  position:absolute;
+  .headline {
+    font-size:16px !important;
+  }
+  .v-card__actions {
+    width:250px;
+    margin:0 auto;
+    padding-bottom:20px;
+    > button {
+      width:100px;
+      margin: 0 10px;
+    }
+  }
+}
+
 </style>
 
 <script>
 export default {
+  data () {
+    return {
+      dialog: false
+    }
+  },
   computed: {
     totalPrice () {
       let total = 0
@@ -70,23 +108,21 @@ export default {
       this.$store.dispatch('cart/removeCart', index)
     },
     buyItem () {
-      if (confirm('購入してもよろしいですか？')) {
-        const data = this.$store.state.cart.cart.map((ele) => {
-          return {
-            title: ele.title,
-            price: ele.price,
-            url: ele.url
-          }
+      const data = this.$store.state.cart.cart.map((ele) => {
+        return {
+          title: ele.title,
+          price: ele.price,
+          url: ele.url
+        }
+      })
+      this.$store.dispatch('cart/buy', data)
+        .then(() => {
+          alert('購入が終了しました')
+          this.$router.push({ name: 'index' })
         })
-        this.$store.dispatch('cart/buy', data)
-          .then(() => {
-            alert('購入が終了しました')
-            this.$router.push({ name: 'index' })
-          })
-          .catch((error) => {
-            console.log(error)
-          })
-      }
+        .catch((error) => {
+          console.log(error)
+        })
     }
   }
 }

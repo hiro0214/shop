@@ -1,7 +1,7 @@
 <template>
   <div class="default">
     <v-app-bar :color="this.$vuetify.theme.themes.dark.primary">
-      <v-app-bar-nav-icon @click="$store.dispatch('other/toggleSide')" />
+      <v-app-bar-nav-icon @click="$store.dispatch('other/toggleSide')" class="header-icon" />
       <router-link to="/">
         <v-toolbar-title>
           <span class="title">Good Shop</span>
@@ -77,6 +77,10 @@ body {
   width:100vw;
   height:100vh;
   background:rgb(240, 240, 240);
+}
+
+.header-icon {
+color:#fff !important;
 }
 
 .title {

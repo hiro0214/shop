@@ -16,10 +16,19 @@
         <v-btn v-if="$store.state.other.isLogin === true" @click="addCart">
           カートに追加する
         </v-btn>
-        <v-btn v-else disabled>
-          カートに追加する
-        </v-btn>
+
+        <div v-else @mouseenter="infoShow" @mouseleave="infoHide">
+          <v-btn disabled>
+            カートに追加する
+          </v-btn>
+        </div>
       </div>
+
+      <transition>
+        <div v-show="info" class="info">
+          <p>カートに追加するには<br>ログインが必要です。</p>
+        </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -74,10 +83,35 @@
   }
 }
 
+.info {
+  width:180px;
+  height:60px;
+  font-size:14px;
+  padding:10px;
+  border-radius:10px;
+  border:solid 1px rgb(156, 156, 156);
+  background:#fff;
+  position:relative;
+  left:250px;
+}
+
+.v-enter-active, .v-leave-active {
+  transition: opacity .4s;
+}
+
+.v-enter, .v-leave-to {
+  opacity:0;
+}
+
 </style>
 
 <script>
 export default {
+  data () {
+    return {
+      info: false
+    }
+  },
   computed: {
     showItem () {
       return this.$store.state.item.item
@@ -96,6 +130,12 @@ export default {
         url: this.$store.state.item.item.url
       }
       this.$store.dispatch('cart/addCart', item)
+    },
+    infoShow () {
+      this.info = true
+    },
+    infoHide () {
+      this.info = false
     }
   }
 }
