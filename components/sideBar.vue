@@ -1,6 +1,6 @@
 <template>
   <v-navigation-drawer v-model="$store.state.other.drawer" absolute temporary>
-    <v-list shaped>
+    <v-list shaped class="sidebar">
       <div v-if="$store.state.other.isLogin">
         <v-subheader>こんにちは、{{ $store.getters['other/userName'] }}さん</v-subheader>
         <v-list-item-group v-model="menu">
@@ -53,3 +53,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+
+.sidebar {
+  padding-top:70px;
+}
+
+</style>

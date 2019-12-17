@@ -15,7 +15,7 @@
         </v-card-text>
       </v-card>
     </v-flex>
-    <p>{{ errorMessage }}</p>
+    <p class="errorMessage">{{ errorMessage }}</p>
   </div>
 </template>
 
@@ -49,3 +49,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.errorMessage {
+  color:red;
+}
+</style>
