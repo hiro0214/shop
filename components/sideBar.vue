@@ -43,11 +43,13 @@ export default {
     return {
       loginMenus: [
         { title: 'マイページ', icon: 'person', link: { name: 'user' } },
-        { title: 'カート', icon: 'shopping_cart', link: { name: 'cart' } }
+        { title: 'カート', icon: 'shopping_cart', link: { name: 'cart' } },
+        { title: 'このサイトについて', icon: 'info', link: { name: 'info' } }
       ],
       logoutMenus: [
         { title: '新規登録', icon: 'supervisor_account', link: { name: 'signUp' } },
-        { title: 'ログイン', icon: 'how_to_reg', link: { name: 'signIn' } }
+        { title: 'ログイン', icon: 'how_to_reg', link: { name: 'signIn' } },
+        { title: 'このサイトについて', icon: 'info', link: { name: 'info' } }
       ]
     }
   }

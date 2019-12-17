@@ -14,9 +14,9 @@
           </v-form>
         </v-card-text>
         <p class="sign-link">ログインページは
-          <router-link to="/signIn">
+          <nuxt-link to="/signIn">
             <span>こちら</span>
-          </router-link>
+          </nuxt-link>
         </p>
       </v-card>
     </v-flex>

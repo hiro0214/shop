@@ -3,11 +3,11 @@
     <flashMessage />
     <v-app-bar :color="this.$vuetify.theme.themes.dark.primary">
       <v-app-bar-nav-icon @click="$store.dispatch('other/toggleSide')" class="header-icon" />
-      <router-link to="/">
+      <nuxt-link to="/">
         <v-toolbar-title>
           <span class="title">Good Shop</span>
         </v-toolbar-title>
-      </router-link>
+      </nuxt-link>
 
       <v-spacer>
         <form>
@@ -19,31 +19,31 @@
       </v-spacer>
 
       <div v-if="$store.state.other.isLogin === false">
-        <router-link to="/signup">
+        <nuxt-link to="/signup">
           <v-btn>
             <p>新規登録</p>
           </v-btn>
-        </router-link>
+        </nuxt-link>
 
-        <router-link to="/signin">
+        <nuxt-link to="/signin">
           <v-btn>
             <p>ログイン</p>
           </v-btn>
-        </router-link>
+        </nuxt-link>
       </div>
 
       <div v-else>
-        <router-link to="/user">
+        <nuxt-link to="/user">
           <v-btn>
             <p>マイページ</p>
           </v-btn>
-        </router-link>
-        <router-link to="/cart">
+        </nuxt-link>
+        <nuxt-link to="/cart">
           <v-btn class="cart-btn">
             <v-icon>shopping_cart</v-icon>
             <p>{{ $store.state.cart.cart.length }}</p>
           </v-btn>
-        </router-link>
+        </nuxt-link>
       </div>
     </v-app-bar>
 

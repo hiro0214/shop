@@ -13,9 +13,9 @@
           </v-form>
         </v-card-text>
         <p class="sign-link">新規登録がまだの方は
-          <router-link to="/signUp">
+          <nuxt-link to="/signUp">
             <span>こちら</span>
-          </router-link>
+          </nuxt-link>
         </p>
       </v-card>
     </v-flex>

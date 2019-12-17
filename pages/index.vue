@@ -3,7 +3,7 @@
     <h1>商品一覧</h1>
     <ul>
       <li v-for="item in $store.state.item.items" :key="item.id">
-        <router-link :to="{ name: 'item-id', params: { id: item.id} }">
+        <nuxt-link :to="{ name: 'item-id', params: { id: item.id} }">
           <div class="item">
             <img :src="item.url">
             <div class="item-info">
@@ -11,7 +11,7 @@
               <span>¥{{ item.price | format-price }}</span>
             </div>
           </div>
-        </router-link>
+        </nuxt-link>
       </li>
     </ul>
   </div>
