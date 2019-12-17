@@ -1,7 +1,7 @@
 <template>
   <div class="default">
     <flashMessage />
-    <v-app-bar :color="this.$vuetify.theme.themes.dark.primary" class="header">
+    <v-app-bar :color="this.$vuetify.theme.themes.dark.primary">
       <v-app-bar-nav-icon @click="$store.dispatch('other/toggleSide')" class="header-icon" />
       <router-link to="/">
         <v-toolbar-title>
@@ -47,13 +47,13 @@
       </div>
     </v-app-bar>
 
-    <sideBar />
-
     <transition name="fade">
       <div v-show="$store.state.cart.info" class="cart-info">
         <p>カートに追加しました</p>
       </div>
     </transition>
+
+    <sideBar />
 
     <section>
       <nuxt />
@@ -81,8 +81,6 @@ body {
 }
 
 .header {
-  position:fixed;
-  z-index:50;
   &-icon {
     color:#fff !important;
   }
@@ -138,7 +136,7 @@ body {
 
 section {
   width:60vw;
-  padding-top:100px;
+  padding-top:40px;
   margin:0 auto 60px;
   > div {
     padding:20px 40px;
