@@ -40,7 +40,7 @@ padding-bottom:5px;
 .data-history {
   > li {
     margin:20px 0 40px;
-    border-bottom:solid 1px;
+    border-bottom:solid 1px rgb(209, 209, 209);
     > p {
       font-weight:600;
     }

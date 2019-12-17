@@ -44,6 +44,7 @@ export default {
         password: this.password
       }
       this.$store.dispatch('other/signUp', data)
+      this.$store.dispatch('other/flashMessage', '新規登録が完了しました')
     }
   }
 }

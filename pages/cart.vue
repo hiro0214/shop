@@ -117,8 +117,8 @@ export default {
       })
       this.$store.dispatch('cart/buy', data)
         .then(() => {
-          alert('購入が終了しました')
           this.$router.push({ name: 'index' })
+          this.$store.dispatch('other/flashMessage', '購入が終了しました')
         })
         .catch((error) => {
           console.log(error)

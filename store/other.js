@@ -4,7 +4,9 @@ export const state = {
   datas: [],
   errorMessage: '',
   isLogin: false,
-  drawer: false
+  drawer: false,
+  flash: false,
+  flashMessage: ''
 }
 
 export const mutations = {
@@ -25,6 +27,13 @@ export const mutations = {
   },
   dataShowInit (state, payload) {
     state.datas.push(payload)
+  },
+  flashMessage (state, payload) {
+    state.flash = true
+    state.flashMessage = payload
+  },
+  flashInit (state) {
+    state.flash = false
   }
 }
 
@@ -39,7 +48,6 @@ export const actions = {
         user.updateProfile({
           displayName: payload.nickname
         })
-        alert('登録が完了しました。')
         dispatch('signOut')
         dispatch('signIn', payload)
       })
@@ -80,6 +88,14 @@ export const actions = {
         commit('dataShowInit', cartData)
       })
     })
+  },
+  flashMessage ({ commit }, payload) {
+    setTimeout(function () {
+      commit('flashMessage', payload)
+    }, 500)
+    setTimeout(function () {
+      commit('flashInit')
+    }, 4000)
   }
 }
 

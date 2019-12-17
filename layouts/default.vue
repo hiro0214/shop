@@ -1,6 +1,7 @@
 <template>
   <div class="default">
-    <v-app-bar :color="this.$vuetify.theme.themes.dark.primary">
+    <flashMessage />
+    <v-app-bar :color="this.$vuetify.theme.themes.dark.primary" class="header">
       <v-app-bar-nav-icon @click="$store.dispatch('other/toggleSide')" class="header-icon" />
       <router-link to="/">
         <v-toolbar-title>
@@ -79,8 +80,12 @@ body {
   background:rgb(240, 240, 240);
 }
 
-.header-icon {
-color:#fff !important;
+.header {
+  position:fixed;
+  z-index:50;
+  &-icon {
+    color:#fff !important;
+  }
 }
 
 .title {
@@ -118,7 +123,7 @@ color:#fff !important;
   border:solid 1px orange;
   border-radius:5px;
   padding:20px 30px;
-  position:absolute;
+  position:fixed;
   top:70px;
   right:20px;
 }
@@ -133,7 +138,7 @@ color:#fff !important;
 
 section {
   width:60vw;
-  padding-top:40px;
+  padding-top:100px;
   margin:0 auto 60px;
   > div {
     padding:20px 40px;
@@ -145,6 +150,7 @@ section {
 
 <script>
 import firebase from '~/plugins/firebase'
+import flashMessage from '~/components/flashMessage.vue'
 import sideBar from '~/components/sideBar.vue'
 
 export default {
@@ -156,6 +162,7 @@ export default {
     })
   },
   components: {
+    flashMessage,
     sideBar
   },
   data () {
