@@ -49,7 +49,14 @@ export const actions = {
           displayName: payload.nickname
         })
         dispatch('signOut')
-        dispatch('signIn', payload)
+        firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
+          .then(() => {
+            this.$router.push({ name: 'index' })
+            dispatch('flashMessage', '新規登録が完了しました')
+          })
+          .catch((error) => {
+            dispatch('missAlert', error.message)
+          })
       })
       .catch((error) => {
         dispatch('missAlert', error.message)
@@ -59,6 +66,7 @@ export const actions = {
     firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
       .then(() => {
         this.$router.push({ name: 'index' })
+        dispatch('flashMessage', 'ログインしました')
       })
       .catch((error) => {
         dispatch('missAlert', error.message)

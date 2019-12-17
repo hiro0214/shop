@@ -1,5 +1,5 @@
 <template>
-  <div class="signin">
+  <div class="sign">
     <h1>ログイン</h1>
     <v-flex xs5 mt-5>
       <v-card>
@@ -12,6 +12,11 @@
             </v-btn>
           </v-form>
         </v-card-text>
+        <p class="sign-link">新規登録がまだの方は
+          <router-link to="/signUp">
+            <span>こちら</span>
+          </router-link>
+        </p>
       </v-card>
     </v-flex>
     <p class="errorMessage">{{ errorMessage }}</p>
@@ -41,7 +46,6 @@ export default {
         password: this.password
       }
       this.$store.dispatch('other/signIn', data)
-      this.$store.dispatch('other/flashMessage', 'ログインしました')
     }
   }
 }
