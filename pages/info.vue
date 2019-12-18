@@ -22,7 +22,7 @@
 
 .info {
   height:500px;
-  width:60%;
+  width:500px;
   margin:0 auto;
 }
 

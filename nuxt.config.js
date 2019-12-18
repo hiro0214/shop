@@ -32,7 +32,8 @@ export default {
   plugins: [
     { src: '~/plugins/localStorage.js', ssr: false },
     '~/plugins/filter.js',
-    '~plugins/vuetify.js'
+    '~plugins/vuetify.js',
+    '~/plugins/vue-mq'
   ],
   /*
   ** Nuxt.js dev-modules
