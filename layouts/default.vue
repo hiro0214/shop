@@ -2,12 +2,14 @@
   <div class="default">
     <flashMessage />
     <v-app-bar :color="this.$vuetify.theme.themes.dark.primary">
-      <v-app-bar-nav-icon @click="$store.dispatch('other/toggleSide')" class="header-icon" />
-      <nuxt-link to="/">
-        <v-toolbar-title>
-          <span class="title">Good Shop</span>
-        </v-toolbar-title>
-      </nuxt-link>
+      <div class="header-nav">
+        <v-app-bar-nav-icon @click="$store.dispatch('other/toggleSide')" class="header-icon" />
+        <nuxt-link to="/">
+          <v-toolbar-title>
+            <span class="title">Good Shop</span>
+          </v-toolbar-title>
+        </nuxt-link>
+      </div>
 
       <v-spacer>
         <form>
@@ -18,7 +20,7 @@
         </form>
       </v-spacer>
 
-      <div v-if="$store.state.other.isLogin === false">
+      <div v-if="$store.state.other.isLogin === false" class="header-menu">
         <nuxt-link to="/signup">
           <v-btn>
             <p>新規登録</p>
@@ -32,10 +34,11 @@
         </nuxt-link>
       </div>
 
-      <div v-else>
+      <div v-else class="header-menu">
         <nuxt-link to="/user">
           <v-btn>
-            <p>マイページ</p>
+            <mq-layout mq="sl+">マイページ</mq-layout>
+            <mq-layout mq="sm"><v-icon>person</v-icon></mq-layout>
           </v-btn>
         </nuxt-link>
         <nuxt-link to="/cart">
@@ -70,6 +73,10 @@
   text-decoration: none;
 }
 
+html {
+  font-size:62.5%;
+}
+
 ul {
   list-style: none;
 }
@@ -77,12 +84,15 @@ ul {
 body {
   width:100vw;
   height:100vh;
-  background:rgb(240, 240, 240);
+  // background:rgb(240, 240, 240);
 }
 
 .header {
   &-icon {
     color:#fff !important;
+  }
+  &-nav {
+    display:flex;
   }
 }
 
@@ -107,7 +117,6 @@ body {
     position:absolute;
   }
   + div {
-    width:250px;
     margin-right:30px;
   }
 }

@@ -25,7 +25,7 @@
       </div>
 
       <transition>
-        <div v-show="info" class="info">
+        <div v-show="info" class="login-info">
           <p>カートに追加するには<br>ログインが必要です。</p>
         </div>
       </transition>
@@ -37,7 +37,7 @@
 
 .show {
   display:flex;
-  min-height:600px;
+  min-height:400px;
   padding-top:40px;
   img {
     border:solid 1px rgb(238, 238, 238);
@@ -48,11 +48,12 @@
     width:55%;
     min-height:400px;
     margin-left:40px;
+    position:relative;
     h3 + div {
       text-align:right;
       > span {
         font-size:14px;
-        +span + span {
+        + span + span {
           font-size:16px;
           font-weight:600;
         }
@@ -83,16 +84,16 @@
   }
 }
 
-.info {
+.login-info {
   width:180px;
-  height:60px;
-  font-size:14px;
+  min-height:60px;
+  font-size:12px;
   padding:10px;
   border-radius:10px;
   border:solid 1px rgb(156, 156, 156);
   background:#fff;
-  position:relative;
-  left:250px;
+  position:absolute;
+  right:0;
 }
 
 .v-enter-active, .v-leave-active {

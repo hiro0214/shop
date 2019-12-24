@@ -25,6 +25,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '~/assets/css/responsive.scss'
   ],
   /*
   ** Plugins to load before mounting the App
