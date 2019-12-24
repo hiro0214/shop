@@ -7,11 +7,11 @@
           <img :src="item.url">
           <div class="item-info">
             <p>{{ item.title }}</p>
+              <v-btn :color="$vuetify.theme.themes.dark.accent" @click="removeCart(index)">
+                削除する
+              </v-btn>
             <span>¥{{ item.price | format-price }}</span>
           </div>
-          <v-btn :color="$vuetify.theme.themes.dark.accent" @click="removeCart(index)">
-            削除する
-          </v-btn>
         </div>
       </li>
       <div class="buy-info">
@@ -48,9 +48,16 @@
 
 .cart {
   min-height:500px;
-  .item .v-btn__content {
-    color:rgb(241, 241, 241);
-    font-weight:600;
+  .item {
+    &-info {
+      p {
+        margin-bottom:10px;
+      }
+    }
+    .v-btn__content {
+      color:rgb(241, 241, 241);
+      font-weight:600;
+    }
   }
 }
 

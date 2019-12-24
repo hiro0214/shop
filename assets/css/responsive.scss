@@ -24,6 +24,11 @@
     }
     .header-menu {
       margin:0;
+      .v-btn__content {
+        p {
+          font-size:5px;
+        }
+      }
     }
   }
 
@@ -44,6 +49,59 @@
               font-size:1.1rem;
             }
           }
+        }
+      }
+
+      .cart {
+        .item {
+          > img {
+            width:100px;
+          }
+          &-info {
+            margin-left:20px;
+            > p {
+              font-size:0.7rem;
+            }
+            > span {
+              font-size:1.0rem;
+            }
+            button {
+              font-size:10px;
+              height:24px;
+            }
+          }
+        }
+        .buy-info {
+          span {
+            font-size:14px;
+          }
+          .total {
+            font-size:16px;
+          }
+          button {
+            margin:0 5px;
+          }
+        }
+      }
+
+      .sign {
+        h1 {
+          font-size:18px;
+        }
+        &-form {
+          width:100%;
+        }
+        p {
+          font-size:12px;
+        }
+      }
+
+      .info {
+        h2 {
+          font-size: 18px;
+        }
+        p {
+          font-size:10px;
         }
       }
 
@@ -92,6 +150,49 @@
           }
         }
       }
+
+      .user_page {
+        padding:20px;
+        &__contents {
+          display:block;
+        }
+        &__list {
+          width:70%;
+          margin:0 auto;
+          i {
+            font-size:18px;
+          }
+          span {
+            font-size:14px;
+          }
+        }
+        .user-main {
+          margin:20px auto 0;
+          h3 {
+            font-size:14px;
+          }
+          .v-form {
+            margin:10px auto;
+          }
+          .data-history {
+            p {
+              font-size:14px;
+            }
+            .data-list__info {
+              p {
+                font-size:12px;
+              }
+              span {
+                font-size:13px;
+              }
+            }
+            .data-total {
+              font-size:15px;
+            }
+          }
+        }
+      }
+
     }
   }
 
@@ -141,6 +242,47 @@
         }
       }
 
+      .cart {
+        .item {
+          > img {
+            width:120px;
+          }
+          &-info {
+            > p {
+              font-size:0.8rem;
+            }
+            > span {
+              font-size:1.1rem;
+            }
+            button {
+              font-size:10px;
+              height:24px;
+            }
+          }
+        }
+      }
+
+      .sign {
+        h1 {
+          font-size:18px;
+        }
+        &-form {
+          width:100%;
+        }
+        p {
+          font-size:13px;
+        }
+      }
+
+      .info {
+        h2 {
+          font-size: 20px;
+        }
+        p {
+          font-size:13px;
+        }
+      }
+
       .show {
         padding:20px;
         > img {
@@ -180,6 +322,49 @@
           }
         }
       }
+
+      .user_page {
+        padding:20px;
+        &__contents {
+          display:block;
+        }
+        &__list {
+          width:70%;
+          margin:0 auto;
+          i {
+            font-size:18px;
+          }
+          span {
+            font-size:14px;
+          }
+        }
+        .user-main {
+          margin:20px auto 0;
+          h3 {
+            font-size:16px;
+          }
+          .v-form {
+            margin:10px auto;
+          }
+          .data-history {
+            p {
+              font-size:14px;
+            }
+            .data-list__info {
+              p {
+                font-size:12px;
+              }
+              span {
+                font-size:14px;
+              }
+            }
+            .data-total {
+              font-size:16px;
+            }
+          }
+        }
+      }
+
     }
   }
 
@@ -212,6 +397,23 @@
 
   .default {
     section {
+
+      .home, .cart {
+        .item {
+          > img {
+            width:170px;
+          }
+          &-info {
+            > p {
+              font-size:0.9rem;
+            }
+            > span {
+              font-size:1.2rem;
+            }
+          }
+        }
+      }
+
       .show {
         padding:20px;
         > img {
@@ -226,6 +428,18 @@
           }
           > p {
             font-size:0.9rem;
+          }
+        }
+      }
+
+      .user_page {
+        padding:20px;
+        &__list {
+          i {
+            font-size:18px;
+          }
+          span {
+            font-size:14px;
           }
         }
       }

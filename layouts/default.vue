@@ -130,9 +130,10 @@ body {
   border:solid 1px orange;
   border-radius:5px;
   padding:20px 30px;
-  position:fixed;
+  position:absolute;
   top:70px;
   right:20px;
+  z-index:80;
 }
 
 .fade-enter-active, .fade-leave-active {

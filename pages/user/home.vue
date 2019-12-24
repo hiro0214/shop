@@ -26,7 +26,8 @@ padding-bottom:5px;
   margin-top:30px;
   margin-left:50px;
   button {
-    float:right;
+    margin-left:auto;
+    display:block;
   }
 }
 

@@ -13,7 +13,7 @@
                 <v-icon>
                   {{ menu.icon }}
                 </v-icon>
-                  {{ menu.title }}
+                  <span>{{ menu.title }}</span>
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>

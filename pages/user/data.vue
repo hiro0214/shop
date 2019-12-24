@@ -15,9 +15,7 @@
                 <span>¥{{ dat.price | format-price }}</span>
               </div>
             </li>
-            <p>
-              合計金額 : <span>¥{{ Number(data.total) | format-price }}</span>
-            </p>
+            <p>合計金額 : <span class="data-total">¥{{ Number(data.total) | format-price }}</span></p>
           </ul>
 
         </li>

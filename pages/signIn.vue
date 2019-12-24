@@ -1,7 +1,7 @@
 <template>
   <div class="sign">
     <h1>ログイン</h1>
-    <v-flex xs5 mt-5>
+    <v-flex class="sign-form">
       <v-card>
         <v-card-text>
           <v-form>
