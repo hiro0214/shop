@@ -25,7 +25,8 @@ padding-bottom:5px;
     margin-top:30px;
   }
   button {
-    float:right;
+    margin-left:auto;
+    display:block;
   }
 }
 

@@ -1,7 +1,7 @@
 <template>
   <div class="sign">
     <h1>ユーザー新規登録</h1>
-    <v-flex xs5 mt-5>
+    <v-flex class="sign-form">
       <v-card>
         <v-card-text>
           <v-form>
@@ -57,10 +57,16 @@ export default {
 <style lang="scss">
 
 .sign {
-  height:450px;
+  padding-bottom:60px;
   button {
     float:right;
   }
+}
+
+.sign-form {
+  width:60%;
+  padding-top:20px;
+  margin:0 auto;
 }
 
 .sign-link {

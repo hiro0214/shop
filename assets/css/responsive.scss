@@ -1,0 +1,474 @@
+// 〜479px：SP縦
+@media screen  and (max-width:479px) {
+  body {
+    background:rgb(255, 221, 221);
+    section {
+      width:90vw;
+      h1 {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  .v-toolbar__content {
+    justify-content:space-between;
+    padding:4px 8px !important;
+    .header-nav {
+      .title {
+        font-size:1.4rem;
+        line-height:56px;
+      }
+    }
+    .spacer {
+      display:none;
+    }
+    .header-menu {
+      margin:0;
+      .v-btn__content {
+        p {
+          font-size:5px;
+        }
+      }
+    }
+  }
+
+  .default {
+    section {
+
+      .home {
+        .item {
+          > img {
+            width:120px;
+          }
+          &-info {
+            margin-left:20px;
+            > p {
+              font-size:0.8rem;
+            }
+            > span {
+              font-size:1.1rem;
+            }
+          }
+        }
+      }
+
+      .cart {
+        .item {
+          > img {
+            width:100px;
+          }
+          &-info {
+            margin-left:20px;
+            > p {
+              font-size:0.7rem;
+            }
+            > span {
+              font-size:1.0rem;
+            }
+            button {
+              font-size:10px;
+              height:24px;
+            }
+          }
+        }
+        .buy-info {
+          span {
+            font-size:14px;
+          }
+          .total {
+            font-size:16px;
+          }
+          button {
+            margin:0 5px;
+          }
+        }
+      }
+
+      .sign {
+        h1 {
+          font-size:18px;
+        }
+        &-form {
+          width:100%;
+        }
+        p {
+          font-size:12px;
+        }
+      }
+
+      .info {
+        h2 {
+          font-size: 18px;
+        }
+        p {
+          font-size:10px;
+        }
+      }
+
+      .show {
+        padding:20px;
+        display:block;
+        > img {
+          width:200px;
+          height:260px;
+          margin:0 auto 20px;
+          display:block;
+        }
+        &-info {
+          width:80%;
+          margin-left:20px;
+          h3 {
+            font-size:0.9rem;
+            & + div {
+              > span {
+                font-size:0.7rem;
+                + span + span {
+                  font-size:0.8rem;
+                }
+              }
+            }
+          }
+          > p {
+            font-size:0.8rem !important;
+          }
+          &__bottom {
+            width:180px;
+            float:none;
+            p {
+              font-size:1.0rem;
+            }
+            button {
+              font-size:0.2rem;
+            }
+          }
+          .login-info {
+            width:140px;
+            min-height:20px;
+            font-size:0.2rem;
+            right:30px;
+            bottom:50px;
+          }
+        }
+      }
+
+      .user_page {
+        padding:20px;
+        &__contents {
+          display:block;
+        }
+        &__list {
+          width:70%;
+          margin:0 auto;
+          i {
+            font-size:18px;
+          }
+          span {
+            font-size:14px;
+          }
+        }
+        .user-main {
+          margin:20px auto 0;
+          h3 {
+            font-size:14px;
+          }
+          .v-form {
+            margin:10px auto;
+          }
+          .data-history {
+            p {
+              font-size:14px;
+            }
+            .data-list__info {
+              p {
+                font-size:12px;
+              }
+              span {
+                font-size:13px;
+              }
+            }
+            .data-total {
+              font-size:15px;
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+}
+
+
+
+
+// 480px〜599px：SP横
+@media screen and (min-width:480px) and (max-width:599px) {
+  body {
+    background:rgb(225, 225, 255);
+    section {
+      width:90vw;
+      h1 {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .v-toolbar__content {
+    justify-content:space-between;
+    .spacer {
+      display:none;
+    }
+    .header-menu {
+      margin:0;
+    }
+  }
+
+  .default {
+    section {
+
+      .home {
+        .item {
+          > img {
+            width:150px;
+          }
+          &-info {
+            > p {
+              font-size:0.9rem;
+            }
+            > span {
+              font-size:1.2rem;
+            }
+          }
+        }
+      }
+
+      .cart {
+        .item {
+          > img {
+            width:120px;
+          }
+          &-info {
+            > p {
+              font-size:0.8rem;
+            }
+            > span {
+              font-size:1.1rem;
+            }
+            button {
+              font-size:10px;
+              height:24px;
+            }
+          }
+        }
+      }
+
+      .sign {
+        h1 {
+          font-size:18px;
+        }
+        &-form {
+          width:100%;
+        }
+        p {
+          font-size:13px;
+        }
+      }
+
+      .info {
+        h2 {
+          font-size: 20px;
+        }
+        p {
+          font-size:13px;
+        }
+      }
+
+      .show {
+        padding:20px;
+        > img {
+          width:150px;
+          height:200px;
+        }
+        &-info {
+          width:80%;
+          margin-left:20px;
+          h3 {
+            font-size:0.9rem;
+            & + div {
+              > span {
+                font-size:0.7rem;
+                + span + span {
+                  font-size:0.8rem;
+                }
+              }
+            }
+          }
+          > p {
+            font-size:0.8rem !important;
+          }
+          &__bottom {
+            width:180px;
+            p {
+              font-size:1.0rem;
+            }
+            button {
+              font-size:0.2rem;
+            }
+          }
+          .login-info {
+            width:140px;
+            min-height:20px;
+            font-size:0.2rem;
+          }
+        }
+      }
+
+      .user_page {
+        padding:20px;
+        &__contents {
+          display:block;
+        }
+        &__list {
+          width:70%;
+          margin:0 auto;
+          i {
+            font-size:18px;
+          }
+          span {
+            font-size:14px;
+          }
+        }
+        .user-main {
+          margin:20px auto 0;
+          h3 {
+            font-size:16px;
+          }
+          .v-form {
+            margin:10px auto;
+          }
+          .data-history {
+            p {
+              font-size:14px;
+            }
+            .data-list__info {
+              p {
+                font-size:12px;
+              }
+              span {
+                font-size:14px;
+              }
+            }
+            .data-total {
+              font-size:16px;
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+
+}
+
+
+
+
+
+
+// 600px〜959px：タブレット
+@media screen and (min-width:600px) and (max-width:959px) {
+  body {
+    background:rgb(214, 250, 214);
+    section {
+      width:90vw;
+    }
+  }
+
+  .v-toolbar__content {
+    justify-content:space-between;
+    .spacer {
+      display:none;
+    }
+    .header-menu {
+      margin:0;
+    }
+  }
+
+  .default {
+    section {
+
+      .home, .cart {
+        .item {
+          > img {
+            width:170px;
+          }
+          &-info {
+            > p {
+              font-size:0.9rem;
+            }
+            > span {
+              font-size:1.2rem;
+            }
+          }
+        }
+      }
+
+      .show {
+        padding:20px;
+        > img {
+          width:200px;
+          height:260px;
+        }
+        &-info {
+          width:70%;
+          margin-left:20px;
+          h3 {
+            font-size:1.1rem;
+          }
+          > p {
+            font-size:0.9rem;
+          }
+        }
+      }
+
+      .user_page {
+        padding:20px;
+        &__list {
+          i {
+            font-size:18px;
+          }
+          span {
+            font-size:14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+// 960px〜1279px：小型PC
+@media screen and (min-width:960px) and (max-width:1279px) {
+  body {
+    background:rgb(255, 255, 220);
+    section {
+      width:80vw;
+    }
+
+  }
+
+}
+
+
+
+
+
+// 1280px〜：大型PC
+@media screen and (min-width:1280px) {
+  body {
+    background:rgb(255, 214, 255);
+  }
+}

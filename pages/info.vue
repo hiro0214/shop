@@ -21,8 +21,7 @@
 <style scoped lang="scss">
 
 .info {
-  height:500px;
-  width:60%;
+  width:100%;
   margin:0 auto;
 }
 
