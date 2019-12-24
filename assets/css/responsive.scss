@@ -1,7 +1,7 @@
 // 〜479px：SP縦
 @media screen  and (max-width:479px) {
   body {
-    background:rgb(255, 221, 221);
+    // background:rgb(255, 221, 221);
     section {
       width:90vw;
       h1 {
@@ -204,7 +204,7 @@
 // 480px〜599px：SP横
 @media screen and (min-width:480px) and (max-width:599px) {
   body {
-    background:rgb(225, 225, 255);
+    // background:rgb(225, 225, 255);
     section {
       width:90vw;
       h1 {
@@ -379,7 +379,7 @@
 // 600px〜959px：タブレット
 @media screen and (min-width:600px) and (max-width:959px) {
   body {
-    background:rgb(214, 250, 214);
+    // background:rgb(214, 250, 214);
     section {
       width:90vw;
     }
@@ -453,7 +453,7 @@
 // 960px〜1279px：小型PC
 @media screen and (min-width:960px) and (max-width:1279px) {
   body {
-    background:rgb(255, 255, 220);
+    // background:rgb(255, 255, 220);
     section {
       width:80vw;
     }
@@ -469,6 +469,6 @@
 // 1280px〜：大型PC
 @media screen and (min-width:1280px) {
   body {
-    background:rgb(255, 214, 255);
+    // background:rgb(255, 214, 255);
   }
 }

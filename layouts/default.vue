@@ -84,7 +84,7 @@ ul {
 body {
   width:100vw;
   height:100vh;
-  // background:rgb(240, 240, 240);
+  background:rgb(240, 240, 240);
 }
 
 .header {

@@ -30,16 +30,5 @@ export default {
     margin:0 auto;
   }
 }
-// .logout-info {
-//   width:100%;
-//   height:200px;
-//   position:relative;
-//   button {
-//     width:200px;
-//     position:absolute;
-//     top:50%;
-//     left:30%;
-//   }
-// }
 
 </style>
