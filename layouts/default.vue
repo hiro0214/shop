@@ -108,15 +108,18 @@ body {
   line-height:37px;
   margin-left:40px;
   margin-right:120px;
-  input {
-    width:100%;
+  form {
+    display:flex;
+    input {
+      width:100%;
     background:#fff;
     border-radius: 5px;
     padding-left:5px;
   }
-  button {
-    position:absolute;
   }
+  // button {
+  //   position:absolute;
+  // }
   + div {
     margin-right:30px;
   }
