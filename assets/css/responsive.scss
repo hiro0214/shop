@@ -13,14 +13,14 @@
   .v-btn {
     span {
       span {
-        font-size:16px !important;
+        font-size:10px !important;
       }
     }
   }
 
   .v-toolbar__content {
     justify-content:space-between;
-    padding:4px 8px !important;
+    padding:4px 4px !important;
     .header-nav {
       .title {
         font-size:1.4rem;
@@ -47,6 +47,7 @@
         .item {
           > img {
             width:120px;
+            height:140px;
           }
           &-info {
             margin-left:20px;
@@ -64,6 +65,7 @@
         .item {
           > img {
             width:100px;
+            height:120px;
           }
           &-info {
             margin-left:20px;
@@ -152,7 +154,7 @@
           .login-info {
             width:140px;
             min-height:20px;
-            font-size:0.2rem;
+            font-size:10px;
             right:30px;
             bottom:50px;
           }
@@ -234,6 +236,14 @@
     }
   }
 
+  .v-btn {
+    span {
+      span {
+        font-size:10px !important;
+      }
+    }
+  }
+
   .default {
     section {
 
@@ -241,6 +251,7 @@
         .item {
           > img {
             width:150px;
+            height:180px;
           }
           &-info {
             > p {
@@ -257,6 +268,7 @@
         .item {
           > img {
             width:120px;
+            height:150px;
           }
           &-info {
             > p {
@@ -329,7 +341,7 @@
           .login-info {
             width:140px;
             min-height:20px;
-            font-size:0.2rem;
+            font-size:10px;
           }
         }
       }
@@ -416,6 +428,7 @@
         .item {
           > img {
             width:170px;
+            height:200px;
           }
           &-info {
             > p {

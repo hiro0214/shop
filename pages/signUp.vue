@@ -6,7 +6,7 @@
         <v-card-text>
           <v-form>
             <v-text-field v-model="nickname" label="ニックネーム" />
-            <v-text-field v-model="email" label="メールアドレス" placeholder="hoge@fuga.com"/>
+            <v-text-field v-model="email" label="メールアドレス" placeholder=" 例) hoge@fuga.com"/>
             <v-text-field :type="show2 ? 'text' : 'password'" v-model="password" label="パスワード" placeholder="6文字以上"/>
             <v-btn @click="signUp">
               登録

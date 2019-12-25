@@ -52,7 +52,7 @@ h1 {
   > img {
     border:solid 1px rgb(238, 238, 238);
     width:200px;
-    height:auto;
+    height:250px;
   }
   &-info {
     width:60%;

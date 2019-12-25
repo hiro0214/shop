@@ -75,6 +75,7 @@
 
 html {
   font-size:62.5%;
+  font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
 }
 
 ul {
