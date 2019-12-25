@@ -1,29 +1,37 @@
 <template>
   <div>
-    <ul>
-      <li v-for="item in $store.state.item.items" :key="item.id">
-        <div class="item">
-          <div class="item-info">
-            <p>{{ item.title }}</p>
-            <span>¥{{ item.price }}</span>
+    <div v-if="$store.state.other.admin">
+      <ul>
+        <li v-for="item in $store.state.item.items" :key="item.id">
+          <div class="item">
+            <div class="item-info">
+              <p>{{ item.title }}</p>
+              <span>¥{{ item.price }}</span>
+            </div>
+            <div class="btn-list">
+              <v-btn>
+                編集
+              </v-btn>
+              <v-btn @click="remove(item.id)">
+                削除
+              </v-btn>
+            </div>
           </div>
-          <div class="btn-list">
-            <v-btn>
-              編集
-            </v-btn>
-            <v-btn @click="remove(item.id)">
-              削除
-            </v-btn>
-          </div>
-        </div>
-      </li>
-    </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div v-else>
+      <p>このページは管理者しか閲覧出来ません。</p>
+    </div>
+
   </div>
 </template>
 
 <script>
 export default {
   created () {
+    this.$store.dispatch('other/admin')
     this.$store.dispatch('item/init')
   },
   methods: {

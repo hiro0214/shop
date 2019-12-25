@@ -10,6 +10,14 @@
     }
   }
 
+  .v-btn {
+    span {
+      span {
+        font-size:16px !important;
+      }
+    }
+  }
+
   .v-toolbar__content {
     justify-content:space-between;
     padding:4px 8px !important;
@@ -177,6 +185,9 @@
           .data-history {
             p {
               font-size:14px;
+            }
+            img {
+              height:100px;
             }
             .data-list__info {
               p {
@@ -349,6 +360,9 @@
           .data-history {
             p {
               font-size:14px;
+            }
+            img {
+              height:100px;
             }
             .data-list__info {
               p {
