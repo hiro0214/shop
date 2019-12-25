@@ -6,7 +6,8 @@ export const state = {
   isLogin: false,
   drawer: false,
   flash: false,
-  flashMessage: ''
+  flashMessage: '',
+  admin: false
 }
 
 export const mutations = {
@@ -34,6 +35,9 @@ export const mutations = {
   },
   flashInit (state) {
     state.flash = false
+  },
+  admin (state) {
+    state.admin = true
   }
 }
 
@@ -104,6 +108,13 @@ export const actions = {
     setTimeout(function () {
       commit('flashInit')
     }, 4000)
+  },
+  admin ({ commit }) {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user.uid === 'PSGh7lhXVtM0DR4M2g3bwS2yA573') {
+        commit('admin')
+      }
+    })
   }
 }
 

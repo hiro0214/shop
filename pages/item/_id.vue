@@ -14,12 +14,12 @@
       <div class="show-info__bottom">
         <p>¥{{ Number(showItem.price) | format-price }}</p>
         <v-btn v-if="$store.state.other.isLogin === true" @click="addCart">
-          カートに追加する
+          <span>カートに追加する</span>
         </v-btn>
 
         <div v-else @mouseenter="infoShow" @mouseleave="infoHide">
           <v-btn disabled>
-            カートに追加する
+            <span>カートに追加する</span>
           </v-btn>
         </div>
       </div>

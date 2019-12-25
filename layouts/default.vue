@@ -23,13 +23,13 @@
       <div v-if="$store.state.other.isLogin === false" class="header-menu">
         <nuxt-link to="/signup">
           <v-btn>
-            <p>新規登録</p>
+            <span>新規登録</span>
           </v-btn>
         </nuxt-link>
 
         <nuxt-link to="/signin">
           <v-btn>
-            <p>ログイン</p>
+            <span>ログイン</span>
           </v-btn>
         </nuxt-link>
       </div>
@@ -44,7 +44,7 @@
         <nuxt-link to="/cart">
           <v-btn class="cart-btn">
             <v-icon>shopping_cart</v-icon>
-            <p>{{ $store.state.cart.cart.length }}</p>
+            <span>{{ $store.state.cart.cart.length }}</span>
           </v-btn>
         </nuxt-link>
       </div>
