@@ -1,22 +1,40 @@
-# shop
+# 概要
+- Nuxt.jsとFirebaseを用いて、SPAでECサイト風のアプリを作成しました。
 
-> My world-class Nuxt.js project
+## 実装した機能
+- 会員登録、ログイン機能
+  - FirebaseのAuthenticationを使い実装しました。
+- 商品登録(管理者用)
+  - 商品の登録は管理者だけ行えます。
+  - フォームに入力したデータをFirebaseに登録するようにしています。
+- 商品表示
+  - Firebaseに登録したデータを、対応した商品IDで取得して表示するようにしています。
+- カート機能
+  - 商品をカートに入れることが出来て、カートページからカートに入っている商品をまとめて決済することが出来ます。(決済自体はダミーです)
+- マイページ機能
+  - ログイン後にマイページに飛ぶことが出来ます。
+  - マイページでは、登録したユーザー情報が見ることが出来ます。
+  - 配送先情報やお支払い方法のページは、ダミーデータで入力しています。
+  - 購入履歴のページでは、カートから決済した商品の履歴を見ることが出来ます。
 
-## Build Setup
+## 使用したライブラリ、プラグイン
+- Sass
+  - サイトのコーディングの際に使用しました。
+- vue-mq
+  - レスポンシブ対応をする時に、ブレークポイント毎の表示を変更する際に使用しました。
+- Firebase
+  - データの登録やユーザーの管理をする際に使用しました。
+- dotenv
+  - Firebaseの設定を環境変数にする際に使用しました。
+- vuex-persistedstate
+  - ログイン情報やカートの中身を保持する際に使用しました。
 
-``` bash
-# install dependencies
-$ npm run install
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+## 今後追加したい機能
+- カテゴリー機能
+- 商品絞り込み機能
+- ソート機能
+- 検索機能
 
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## 制作期間
+- 6日ほど
